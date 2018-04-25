@@ -1,5 +1,5 @@
 #include "monty.h"
-
+char *global_var = NULL;
 /**
  * get_tokens - get tokens from line
  * @line: line from file

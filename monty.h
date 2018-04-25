@@ -44,6 +44,6 @@ typedef struct instruction_s
 
 char *get_token(char *line);
 
-void (*get_func(char *op))(stack_t **stack, unsigned int line_number);
+void get_func(char *op, stack_t **stack, unsigned int line_number);
 
 #endif
