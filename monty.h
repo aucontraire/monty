@@ -11,6 +11,7 @@
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
 
+extern char *global_var;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -41,6 +42,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int get_tokens(char *line, unsigned int line_number);
+char *get_token(char *line);
+
+void (*get_func(char *op))(stack_t **stack, unsigned int line_number);
 
 #endif

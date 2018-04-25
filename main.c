@@ -1,6 +1,4 @@
 #include "monty.h"
-
-
 /**
  * main - opens monty file and reads lines
  * @argc: number of arguments
@@ -16,7 +14,7 @@ int main(int argc, char *argv[])
 	size_t len = 0;
 	char *line = NULL;
 	int line_number = 0;
-
+	char *token = NULL;
 
 	if (argc != 2)
 	{
@@ -38,7 +36,8 @@ int main(int argc, char *argv[])
 				line_number++;
 				printf("-------------------------\n");
 				printf("b_read: %d, line: %s", (int)bytes_read, line);
-				get_tokens(line, line_number);
+				token = get_token(line);
+				get_func(token);
 			}
 			printf("bytes read EOF: %d\n", (int)bytes_read);
 			free(line);
